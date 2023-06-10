@@ -1,5 +1,0 @@
-C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\Release\net7.0\FFX_FSR2.csproj.AssemblyReference.cache
-C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\Release\net7.0\FFX_FSR2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\Release\net7.0\FFX_FSR2.AssemblyInfoInputs.cache
-C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\Release\net7.0\FFX_FSR2.AssemblyInfo.cs
-C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\Release\net7.0\FFX_FSR2.csproj.CoreCompileInputs.cache
