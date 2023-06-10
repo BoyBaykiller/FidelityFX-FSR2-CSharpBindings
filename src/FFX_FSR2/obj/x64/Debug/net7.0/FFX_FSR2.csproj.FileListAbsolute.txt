@@ -1,0 +1,12 @@
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\bin\x64\Debug\net7.0\FFX_FSR2.deps.json
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\bin\x64\Debug\net7.0\FFX_FSR2.dll
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\bin\x64\Debug\net7.0\FFX_FSR2.pdb
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.csproj.AssemblyReference.cache
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.AssemblyInfoInputs.cache
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.AssemblyInfo.cs
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.csproj.CoreCompileInputs.cache
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.dll
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\refint\FFX_FSR2.dll
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\FFX_FSR2.pdb
+C:\Programming\VS\GP\FidelityFX-FSR2-CSharpBindings\src\FFX_FSR2\obj\x64\Debug\net7.0\ref\FFX_FSR2.dll
