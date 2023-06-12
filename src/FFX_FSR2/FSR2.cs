@@ -9,9 +9,9 @@ namespace FFX_FSR2
     public static unsafe partial class FSR2
     {
 #if DEBUG
-        private const string LIBARY_NAME = "C:/Programming/VS/FidelityFX-FSR2/bin/FFX_FSR2_api_x64d";
+        private const string LIBARY_NAME = "C:/Programming/VS/GitClones/FidelityFX-FSR2/bin/FFX_FSR2_api_x64d";
 #else
-        private const string LIBARY_NAME = "C:/Programming/VS/FidelityFX-FSR2/bin/FFX_FSR2_api_x64";
+        private const string LIBARY_NAME = "C:/Programming/VS/GitClones/FidelityFX-FSR2/bin/FFX_FSR2_api_x64";
 #endif
 
         public const int FFX_FSR2_CONTEXT_SIZE = 16536;

@@ -8,24 +8,24 @@ namespace FFX_FSR2
     {
         public enum Pass
         {
-            FFX_FSR2_PASS_DEPTH_CLIP = 0,
-            FFX_FSR2_PASS_RECONSTRUCT_PREVIOUS_DEPTH = 1,
-            FFX_FSR2_PASS_LOCK = 2,
-            FFX_FSR2_PASS_ACCUMULATE = 3,
-            FFX_FSR2_PASS_ACCUMULATE_SHARPEN = 4,
-            FFX_FSR2_PASS_RCAS = 5,
-            FFX_FSR2_PASS_COMPUTE_LUMINANCE_PYRAMID = 6,
-            FFX_FSR2_PASS_GENERATE_REACTIVE = 7,
-            FFX_FSR2_PASS_TCR_AUTOGENERATE = 8,
+            DepthClip = 0,
+            PreviousDepth = 1,
+            Lock = 2,
+            Accumulate = 3,
+            Sharpen = 4,
+            RCAS = 5,
+            LuminancePyramid = 6,
+            Reactive = 7,
+            Autogenerate = 8,
 
-            FFX_FSR2_PASS_COUNT
+            Count
         }
 
         public enum MsgType
         {
-            FFX_FSR2_MESSAGE_TYPE_ERROR = 0,
-            FFX_FSR2_MESSAGE_TYPE_WARNING = 1,
-            FFX_FSR2_MESSAGE_TYPE_COUNT
+            Error = 0,
+            Warning = 1,
+            Count
         }
 
 

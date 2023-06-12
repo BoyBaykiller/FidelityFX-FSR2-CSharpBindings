@@ -2,7 +2,7 @@
 
 namespace FFX_FSR2
 {
-    public static class FSR2Types
+    public static unsafe class FSR2Types
     {
         public const int MAX_NUM_SRVS = 16;
         public const int MAX_NUM_UAVS = 8;
@@ -11,99 +11,99 @@ namespace FFX_FSR2
 
         public enum SurfaceFormat
         {
-            FFX_SURFACE_FORMAT_UNKNOWN,
-            FFX_SURFACE_FORMAT_R32G32B32A32_TYPELESS,
-            FFX_SURFACE_FORMAT_R32G32B32A32_FLOAT,
-            FFX_SURFACE_FORMAT_R16G16B16A16_FLOAT,
-            FFX_SURFACE_FORMAT_R16G16B16A16_UNORM,
-            FFX_SURFACE_FORMAT_R32G32_FLOAT,
-            FFX_SURFACE_FORMAT_R32_UINT,
-            FFX_SURFACE_FORMAT_R8G8B8A8_TYPELESS,
-            FFX_SURFACE_FORMAT_R8G8B8A8_UNORM,
-            FFX_SURFACE_FORMAT_R11G11B10_FLOAT,
-            FFX_SURFACE_FORMAT_R16G16_FLOAT,
-            FFX_SURFACE_FORMAT_R16G16_UINT,
-            FFX_SURFACE_FORMAT_R16_FLOAT,
-            FFX_SURFACE_FORMAT_R16_UINT,
-            FFX_SURFACE_FORMAT_R16_UNORM,
-            FFX_SURFACE_FORMAT_R16_SNORM,
-            FFX_SURFACE_FORMAT_R8_UNORM,
-            FFX_SURFACE_FORMAT_R8_UINT,
-            FFX_SURFACE_FORMAT_R8G8_UNORM,
-            FFX_SURFACE_FORMAT_R32_FLOAT
+            Unknown,
+            R32G32B32A32Typeless,
+            R32G32B32A32Float,
+            R16G16B16A16Float,
+            R16G16B16A16Unorm,
+            R32G32Float,
+            R32Uint,
+            R8G8B8A8Typeless,
+            R8G8B8A8Unorm,
+            R11G11B10Float,
+            R16G16Float,
+            R16G16Uint,
+            R16Float,
+            R16Uint,
+            R16Unorm,
+            R16Snorm,
+            R8Unorm,
+            R8Uint,
+            R8G8Unorm,
+            R32Float
         }
 
         public enum ResourceUsage
         {
-            FFX_RESOURCE_USAGE_READ_ONLY = 0,
-            FFX_RESOURCE_USAGE_RENDERTARGET = (1 << 0),
-            FFX_RESOURCE_USAGE_UAV = (1 << 1),
+            ReadOnly = 0,
+            Rendertarget = (1 << 0),
+            UAV = (1 << 1),
         }
 
         public enum ResourceStates
         {
-            FFX_RESOURCE_STATE_UNORDERED_ACCESS = (1 << 0),
-            FFX_RESOURCE_STATE_COMPUTE_READ = (1 << 1),
-            FFX_RESOURCE_STATE_COPY_SRC = (1 << 2),
-            FFX_RESOURCE_STATE_COPY_DEST = (1 << 3),
-            FFX_RESOURCE_STATE_GENERIC_READ = (FFX_RESOURCE_STATE_COPY_SRC | FFX_RESOURCE_STATE_COMPUTE_READ),
+            UnorderedAccess = (1 << 0),
+            ComputeRead = (1 << 1),
+            CopySrc = (1 << 2),
+            CopyDest = (1 << 3),
+            GenericRead = (CopySrc | ComputeRead),
         }
 
         public enum ResourceFlags
         {
-            FFX_RESOURCE_FLAGS_NONE = 0,
-            FFX_RESOURCE_FLAGS_ALIASABLE = (1 << 0),
+            None = 0,
+            Aliasable = (1 << 0),
         }
 
         public enum FilterType
         {
-            FFX_FILTER_TYPE_POINT,
-            FFX_FILTER_TYPE_LINEAR
+            Point,
+            Linear
         }
 
         public enum ShaderModel
         {
-            FFX_SHADER_MODEL_5_1,
-            FFX_SHADER_MODEL_6_0,
-            FFX_SHADER_MODEL_6_1,
-            FFX_SHADER_MODEL_6_2,
-            FFX_SHADER_MODEL_6_3,
-            FFX_SHADER_MODEL_6_4,
-            FFX_SHADER_MODEL_6_5,
-            FFX_SHADER_MODEL_6_6,
-            FFX_SHADER_MODEL_6_7,
+            Model5_1,
+            Model6_0,
+            Model6_1,
+            Model6_2,
+            Model6_3,
+            Model6_4,
+            Model6_5,
+            Model6_6,
+            Model6_7,
         }
 
         public enum ResourceType
         {
-            FFX_RESOURCE_TYPE_BUFFER,
-            FFX_RESOURCE_TYPE_TEXTURE1D,
-            FFX_RESOURCE_TYPE_TEXTURE2D,
-            FFX_RESOURCE_TYPE_TEXTURE3D,
+            Buffer,
+            Texture1D,
+            Texture2D,
+            Texture3D,
         }
 
         public enum HeapType
         {
-            FFX_HEAP_TYPE_DEFAULT = 0,
-            FFX_HEAP_TYPE_UPLOAD
+            Default = 0,
+            Upload
         }
 
         public enum GpuJobType
         {
-            FFX_GPU_JOB_CLEAR_FLOAT = 0,
-            FFX_GPU_JOB_COPY = 1,
-            FFX_GPU_JOB_COMPUTE = 2,
+            ClearFloat = 0,
+            Copy = 1,
+            Compute = 2,
         }
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct DeviceCapabilities
         {
-            public ShaderModel minimumSupportedShaderModel;
-            public uint waveLaneCountMin;
-            public uint waveLaneCountMax;
-            public byte fp16Supported;
-            public byte raytracingSupported;
+            public ShaderModel MinimumSupportedShaderModel;
+            public uint WaveLaneCountMin;
+            public uint WaveLaneCountMax;
+            public byte Fp16Supported;
+            public byte RaytracingSupported;
         }
 
 
@@ -126,25 +126,25 @@ namespace FFX_FSR2
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ResourceDescription
         {
-            public ResourceType type;
-            public SurfaceFormat format;
-            public uint width;
-            public uint height;
-            public uint depth;
-            public uint mipCount;
-            public ResourceFlags flags;
+            public ResourceType Type;
+            public SurfaceFormat Format;
+            public uint Width;
+            public uint Height;
+            public uint Depth;
+            public uint MipCount;
+            public ResourceFlags Flags;
         }
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct Resource
+        public struct Resource
         {
-            public void* resource;
-            public fixed ushort name[64];
-            public ResourceDescription description;
-            public ResourceStates state;
-            public byte isDepth;
-            public ulong descriptorData;
+            public void* _Resource;
+            public fixed ushort Name[64];
+            public ResourceDescription Description;
+            public ResourceStates State;
+            public byte IsDepth;
+            public ulong DescriptorData;
         }
 
 
@@ -153,37 +153,37 @@ namespace FFX_FSR2
         {
             public const int SIZE = 4;
 
-            public int internalIndex;
+            public int InternalIndex;
         }
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct ResourceBinding
+        public struct ResourceBinding
         {
             public const int SIZE = 136;
 
-            public uint slotIndex;
-            public uint resourceIdentifier;
-            public fixed ushort name[64];
+            public uint SlotIndex;
+            public uint ResourceIdentifier;
+            public fixed ushort Name[64];
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct PipelineState
+        public struct PipelineState
         {
-            public void* rootSignature;
-            public void* pipeline;
-            public uint uavCount;
-            public uint srvCount;
-            public uint constCount;
+            public void* RootSignature;
+            public void* Pipeline;
+            public uint UAVCount;
+            public uint SRVCount;
+            public uint ConstCount;
 
-            public fixed byte uavResourceBindings[ResourceBinding.SIZE * MAX_NUM_UAVS];
-            public fixed byte srvResourceBindings[ResourceBinding.SIZE * MAX_NUM_SRVS]; 
-            public fixed byte cbResourceBindings[ResourceBinding.SIZE * MAX_NUM_CONST_BUFFERS];
+            public fixed byte UAVResourceBindings[ResourceBinding.SIZE * MAX_NUM_UAVS];
+            public fixed byte SRVResourceBindings[ResourceBinding.SIZE * MAX_NUM_SRVS]; 
+            public fixed byte CBResourceBindings[ResourceBinding.SIZE * MAX_NUM_CONST_BUFFERS];
         }
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct CreateResourceDescription
+        public struct CreateResourceDescription
         {
             public HeapType HeapType;
             public ResourceDescription ResourceDescription;
@@ -197,18 +197,18 @@ namespace FFX_FSR2
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct PipelineDescription
+        public struct PipelineDescription
         {
-            public uint contextFlags;
-            public FilterType* samplers;
-            public nuint samplerCount;
-            public uint* rootConstantBufferSizes;
-            public uint rootConstantBufferCount;
+            public uint ContextFlags;
+            public FilterType* Samplers;
+            public nuint SamplerCount;
+            public uint* RootConstantBufferSizes;
+            public uint RootConstantBufferCount;
         }
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct ConstantBuffer
+        public struct ConstantBuffer
         {
             public const int SIZE = 260;
 
@@ -218,7 +218,7 @@ namespace FFX_FSR2
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct ClearFloatJobDescription
+        public struct ClearFloatJobDescription
         {
             public fixed float Color[4];
             public ResourceInternal Target;
@@ -226,7 +226,7 @@ namespace FFX_FSR2
 
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct ComputeJobDescription
+        public struct ComputeJobDescription
         {
             public PipelineState Pipeline;
             public fixed uint Dimensions[3];
@@ -252,7 +252,7 @@ namespace FFX_FSR2
         }
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe struct GpuJobDescription
+        public struct GpuJobDescription
         {
             [FieldOffset(0)] public GpuJobType JobType;
 
