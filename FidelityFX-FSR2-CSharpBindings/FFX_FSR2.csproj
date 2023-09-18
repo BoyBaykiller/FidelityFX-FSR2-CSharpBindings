@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>x64</Platforms>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>AMD; FSR2; OpenGL; Graphics;</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Title>FidelityFX-FSR2-OpenGL</Title>
+    <Description>C# bindings for https://github.com/JuanDiegoMontoya/FidelityFX-FSR2-OpenGL, a OpenGL backend for AMD FSR2</Description>
+    <RepositoryUrl>https://github.com/BoyBaykiller/FidelityFX-FSR2-CSharpBindings</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/BoyBaykiller/FidelityFX-FSR2-CSharpBindings</PackageProjectUrl>
+    <Authors>BoyBaykiller</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="res/ffx_fsr2_api_gl_x64.dll; res/ffx_fsr2_api_x64.dll">
+      <PackagePath>lib/$(TargetFramework)</PackagePath>
+      <Pack>true</Pack>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+
+  </ItemGroup>
+
+</Project>

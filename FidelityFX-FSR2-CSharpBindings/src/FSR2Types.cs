@@ -4,10 +4,10 @@ namespace FFX_FSR2
 {
     public static unsafe class FSR2Types
     {
-        public const int MAX_NUM_SRVS = 16;
-        public const int MAX_NUM_UAVS = 8;
-        public const int MAX_NUM_CONST_BUFFERS = 2;
-        public const int MAX_CONST_SIZE = 64;
+        private const int MAX_NUM_SRVS = 16;
+        private const int MAX_NUM_UAVS = 8;
+        private const int MAX_NUM_CONST_BUFFERS = 2;
+        private const int MAX_CONST_SIZE = 64;
 
         public enum SurfaceFormat
         {
@@ -95,8 +95,6 @@ namespace FFX_FSR2
             Compute = 2,
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct DeviceCapabilities
         {
             public ShaderModel MinimumSupportedShaderModel;
@@ -106,24 +104,18 @@ namespace FFX_FSR2
             public byte RaytracingSupported;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct Dimensions2D
         {
             public uint Width;
             public uint Height;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct FloatCoords2D
         {
             public float X;
             public float Y;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ResourceDescription
         {
             public ResourceType Type;
@@ -135,8 +127,6 @@ namespace FFX_FSR2
             public ResourceFlags Flags;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct Resource
         {
             public void* _Resource;
@@ -147,8 +137,6 @@ namespace FFX_FSR2
             public ulong DescriptorData;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ResourceInternal
         {
             public const int SIZE = 4;
@@ -156,8 +144,6 @@ namespace FFX_FSR2
             public int InternalIndex;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ResourceBinding
         {
             public const int SIZE = 136;
@@ -167,7 +153,6 @@ namespace FFX_FSR2
             public fixed ushort Name[64];
         }
 
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct PipelineState
         {
             public void* RootSignature;
@@ -177,12 +162,10 @@ namespace FFX_FSR2
             public uint ConstCount;
 
             public fixed byte UAVResourceBindings[ResourceBinding.SIZE * MAX_NUM_UAVS];
-            public fixed byte SRVResourceBindings[ResourceBinding.SIZE * MAX_NUM_SRVS]; 
+            public fixed byte SRVResourceBindings[ResourceBinding.SIZE * MAX_NUM_SRVS];
             public fixed byte CBResourceBindings[ResourceBinding.SIZE * MAX_NUM_CONST_BUFFERS];
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct CreateResourceDescription
         {
             public HeapType HeapType;
@@ -195,8 +178,6 @@ namespace FFX_FSR2
             public uint Id;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct PipelineDescription
         {
             public uint ContextFlags;
@@ -206,8 +187,6 @@ namespace FFX_FSR2
             public uint RootConstantBufferCount;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ConstantBuffer
         {
             public const int SIZE = 260;
@@ -216,16 +195,12 @@ namespace FFX_FSR2
             public fixed uint Data[MAX_CONST_SIZE];
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ClearFloatJobDescription
         {
             public fixed float Color[4];
             public ResourceInternal Target;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct ComputeJobDescription
         {
             public PipelineState Pipeline;
@@ -243,8 +218,6 @@ namespace FFX_FSR2
             public fixed uint CBSlotIndex[MAX_NUM_CONST_BUFFERS];
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct CopyJobDescription
         {
             public ResourceInternal Src;

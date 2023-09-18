@@ -8,13 +8,9 @@ namespace FFX_FSR2
 {
     public static unsafe partial class FSR2
     {
-#if DEBUG
-        private const string LIBARY_NAME = "C:/Programming/VS/GitClones/FidelityFX-FSR2/bin/FFX_FSR2_api_x64d";
-#else
-        private const string LIBARY_NAME = "C:/Programming/VS/GitClones/FidelityFX-FSR2/bin/FFX_FSR2_api_x64";
-#endif
+        private const string LIBRARY_NAME = "ffx_fsr2_api_x64.dll";
 
-        public const int FFX_FSR2_CONTEXT_SIZE = 16536;
+        private const int FFX_FSR2_CONTEXT_SIZE = 16536;
 
         public enum QualityMode
         {
@@ -38,9 +34,9 @@ namespace FFX_FSR2
             AllowNullDeviceAndCommandList = (1 << 9)
         }
 
-        public delegate void DelegateMessage(MsgType type, [MarshalAs(UnmanagedType.LPWStr)] string message);
 
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
+        public delegate void FpMessageDelegate(MsgType type, [MarshalAs(UnmanagedType.LPWStr)] string message);
+
         public struct ContextDescription
         {
             public InitializationFlagBits Flags;
@@ -52,8 +48,6 @@ namespace FFX_FSR2
             public delegate* unmanaged<MsgType, string, void> FpMessage;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct DispatchDescription
         {
             public void* CommandList;
@@ -87,9 +81,7 @@ namespace FFX_FSR2
             public float AutoReactiveMax;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
-        public unsafe struct GenerateReactiveDescription
+        public struct GenerateReactiveDescription
         {
             public void* CommandList;
             public Resource ColorOpaqueOnly;
@@ -102,39 +94,36 @@ namespace FFX_FSR2
             public uint Flags;
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct Context
         {
             public fixed uint Data[FFX_FSR2_CONTEXT_SIZE];
         }
 
-
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2ContextCreate")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2ContextCreate")]
         public static partial ErrorCode ContextCreate(out Context context, in ContextDescription contextDescription);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2ContextDispatch")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2ContextDispatch")]
         public static partial ErrorCode ContextDispatch(ref Context context, in DispatchDescription dispatchDescription);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2ContextDestroy")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2ContextDestroy")]
         public static partial ErrorCode ContextDestroy(ref Context context);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2GetUpscaleRatioFromQualityMode")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetUpscaleRatioFromQualityMode")]
         public static partial float GetUpscaleRatioFromQualityMode(QualityMode qualityMode);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2GetRenderResolutionFromQualityMode")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetRenderResolutionFromQualityMode")]
         public static partial ErrorCode GetRenderResolutionFromQualityMode(out uint renderWidth, out uint renderHeight, uint displayWidth, uint displayHeight, QualityMode qualityMode);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2GetJitterPhaseCount")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetJitterPhaseCount")]
         public static partial int GetJitterPhaseCount(int renderWidth, int displayWidth);
 
 
-        [LibraryImport(LIBARY_NAME, EntryPoint = "ffxFsr2GetJitterOffset")]
+        [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetJitterOffset")]
         public static partial ErrorCode GetJitterOffset(out float outX, out float outY, int index, int phaseCount);
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using static FFX_FSR2.FSR2Error;
+﻿using static FFX_FSR2.FSR2Error;
 using static FFX_FSR2.FSR2Types;
 
 namespace FFX_FSR2
@@ -28,8 +27,6 @@ namespace FFX_FSR2
             Count
         }
 
-
-        [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct Interface
         {
             public delegate* unmanaged<ref Interface, void*, ErrorCode> FpCreateBackendContext;
@@ -48,6 +45,5 @@ namespace FFX_FSR2
             public void* ScratchBuffer;
             public nuint ScratchBufferSize;
         }
-
     }
 }
