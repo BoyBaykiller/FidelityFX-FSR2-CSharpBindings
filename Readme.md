@@ -1,6 +1,7 @@
 # FidelityFX-FSR2-CSharpBindings
 
-An attempt to make C# bindings for FSR2 with an OpenGL backend.
+C# bindings for https://github.com/JuanDiegoMontoya/FidelityFX-FSR2,
+a fork of the official [AMD FidelityFX FSR2](https://github.com/GPUOpen-Effects/FidelityFX-FSR2) library which adds OpenGL support.
 
-You may know that the official [AMD FidelityFX FSR2](https://github.com/GPUOpen-Effects/FidelityFX-FSR2) library does not actually come with an OpenGL backend. However, [this fork](https://github.com/JuanDiegoMontoya/FidelityFX-FSR2) adds one.
-Said fork is used as basis for the bindings.
+If you have a C# OpenGL app and you want to integrate FSR2 this project is for you.
+It's available as NuGet package, [here](www.nuget.org/packages/FFX_FSR2/1.0.0).

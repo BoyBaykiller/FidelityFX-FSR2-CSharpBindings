@@ -18,10 +18,7 @@
     <Content Include="res/ffx_fsr2_api_gl_x64.dll; res/ffx_fsr2_api_x64.dll">
       <PackagePath>lib/$(TargetFramework)</PackagePath>
       <Pack>true</Pack>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-
   </ItemGroup>
 
 </Project>
