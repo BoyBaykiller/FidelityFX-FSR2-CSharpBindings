@@ -12,6 +12,7 @@
     <RepositoryUrl>https://github.com/BoyBaykiller/FidelityFX-FSR2-CSharpBindings</RepositoryUrl>
     <PackageProjectUrl>https://github.com/BoyBaykiller/FidelityFX-FSR2-CSharpBindings</PackageProjectUrl>
     <Authors>BoyBaykiller</Authors>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
