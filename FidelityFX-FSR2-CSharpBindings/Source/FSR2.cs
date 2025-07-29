@@ -8,7 +8,7 @@ namespace FFX_FSR2
 {
     public static unsafe partial class FSR2
     {
-        private const string LIBRARY_NAME = "ffx_fsr2_api_x64.dll";
+        private const string LIBRARY_NAME = "ffx_fsr2_api_x64";
 
         private const int FFX_FSR2_CONTEXT_SIZE = 16536;
 
@@ -34,9 +34,6 @@ namespace FFX_FSR2
             AllowNullDeviceAndCommandList = (1 << 9)
         }
 
-
-        public delegate void FpMessageDelegate(MsgType type, [MarshalAs(UnmanagedType.LPWStr)] string message);
-
         public struct ContextDescription
         {
             public InitializationFlagBits Flags;
@@ -45,7 +42,7 @@ namespace FFX_FSR2
             public Interface Callbacks;
             public void* Device;
 
-            public delegate* unmanaged<MsgType, string, void> FpMessage;
+            public delegate* unmanaged<MsgType, char*, void> FpMessage;
         }
 
         public struct DispatchDescription
@@ -96,7 +93,7 @@ namespace FFX_FSR2
 
         public struct Context
         {
-            public fixed uint Data[FFX_FSR2_CONTEXT_SIZE];
+            public fixed byte Data[FFX_FSR2_CONTEXT_SIZE];
         }
 
         [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2ContextCreate")]

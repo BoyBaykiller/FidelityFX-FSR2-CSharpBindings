@@ -6,7 +6,7 @@ namespace FFX_FSR2
     {
         public static partial class GL
         {
-            private const string LIBRARY_NAME = "ffx_fsr2_api_gl_x64.dll";
+            private const string LIBRARY_NAME = "ffx_fsr2_api_gl_x64";
 
             [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetScratchMemorySizeGL")]
             public static partial nuint GetScratchMemorySize();

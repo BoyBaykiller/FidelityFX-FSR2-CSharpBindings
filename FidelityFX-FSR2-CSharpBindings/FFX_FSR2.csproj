@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Platforms>x64</Platforms>
+    <Platforms>AnyCPU</Platforms>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageTags>AMD; FSR2; OpenGL; Graphics;</PackageTags>
     <PackageReleaseNotes></PackageReleaseNotes>
@@ -16,9 +16,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="res/natives/win-x64/Release/ffx_fsr2_api_gl_x64.dll; res/natives/win-x64/Release/ffx_fsr2_api_x64.dll">
+    <Content Include="Resource/Natives/win-x64/Release/ffx_fsr2_api_gl_x64.dll; Resource/Natives/win-x64/Release/ffx_fsr2_api_x64.dll">
       <PackagePath>runtimes/win-x64/native</PackagePath>
-      <Pack>true</Pack>
     </Content>
   </ItemGroup>
 
