@@ -11,10 +11,8 @@ namespace FFX_FSR2
             [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetScratchMemorySizeGL")]
             public static partial nuint GetScratchMemorySize();
 
-            public delegate nint DelegateGetProcAddress(string name);
-
             [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2GetInterfaceGL")]
-            public static partial FSR2Error.ErrorCode GetInterface(out FSR2Interface.Interface outInterface, ref byte scratchBuffer, nuint scratchBufferSize, DelegateGetProcAddress getProcAddress);
+            public static partial FSR2Error.ErrorCode GetInterface(out FSR2Interface.Interface outInterface, void* scratchBuffer, nuint scratchBufferSize, delegate* unmanaged<byte*, void*> getProcAddress);
 
             [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxGetTextureResourceGL")]
             public static partial FSR2Types.Resource GetTextureResource(uint textureGL, uint width, uint height, uint imgFormat, in ushort name = 0);

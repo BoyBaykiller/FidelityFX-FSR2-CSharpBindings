@@ -100,8 +100,8 @@ namespace FFX_FSR2
             public ShaderModel MinimumSupportedShaderModel;
             public uint WaveLaneCountMin;
             public uint WaveLaneCountMax;
-            public byte Fp16Supported;
-            public byte RaytracingSupported;
+            public bool Fp16Supported;
+            public bool RaytracingSupported;
         }
 
         public struct Dimensions2D
@@ -133,7 +133,7 @@ namespace FFX_FSR2
             public fixed ushort Name[64];
             public ResourceDescription Description;
             public ResourceStates State;
-            public byte IsDepth;
+            public bool IsDepth;
             public ulong DescriptorData;
         }
 

@@ -29,18 +29,18 @@ namespace FFX_FSR2
 
         public struct Interface
         {
-            public delegate* unmanaged<ref Interface, void*, ErrorCode> FpCreateBackendContext;
-            public delegate* unmanaged<ref Interface, ref DeviceCapabilities, void*, ErrorCode> FpGetDeviceCapabilities;
-            public delegate* unmanaged<ref Interface, ErrorCode> FpDestroyBackendContext;
-            public delegate* unmanaged<ref Interface, in CreateResourceDescription, ref ResourceInternal, ErrorCode> FpCreateResource;
-            public delegate* unmanaged<ref Interface, in Resource, ref ResourceInternal, ErrorCode> FpRegisterResource;
-            public delegate* unmanaged<ref Interface, ErrorCode> FpUnregisterResources;
-            public delegate* unmanaged<ref Interface, ResourceInternal, ResourceDescription> FpGetResourceDescription;
-            public delegate* unmanaged<ref Interface, ResourceInternal, ErrorCode> FpDestroyResource;
-            public delegate* unmanaged<ref Interface, Pass, in PipelineDescription, ref PipelineState, ErrorCode> FpCreatePipeline;
-            public delegate* unmanaged<ref Interface, ref PipelineState, ErrorCode> FpDestroyPipeline;
-            public delegate* unmanaged<ref Interface, in GpuJobDescription, ErrorCode> FpScheduleGpuJob;
-            public delegate* unmanaged<ref Interface, void*, ErrorCode> FpExecuteGpuJobs;
+            public delegate* unmanaged<Interface*, void*, ErrorCode> FpCreateBackendContext;
+            public delegate* unmanaged<Interface*, DeviceCapabilities*, void*, ErrorCode> FpGetDeviceCapabilities;
+            public delegate* unmanaged<Interface*, ErrorCode> FpDestroyBackendContext;
+            public delegate* unmanaged<Interface*, CreateResourceDescription*, ResourceInternal*, ErrorCode> FpCreateResource;
+            public delegate* unmanaged<Interface*, Resource*, ResourceInternal*, ErrorCode> FpRegisterResource;
+            public delegate* unmanaged<Interface*, ErrorCode> FpUnregisterResources;
+            public delegate* unmanaged<Interface*, ResourceInternal, ResourceDescription> FpGetResourceDescription;
+            public delegate* unmanaged<Interface*, ResourceInternal, ErrorCode> FpDestroyResource;
+            public delegate* unmanaged<Interface*, Pass, PipelineDescription*, PipelineState*, ErrorCode> FpCreatePipeline;
+            public delegate* unmanaged<Interface*, PipelineState*, ErrorCode> FpDestroyPipeline;
+            public delegate* unmanaged<Interface*, GpuJobDescription*, ErrorCode> FpScheduleGpuJob;
+            public delegate* unmanaged<Interface*, void*, ErrorCode> FpExecuteGpuJobs;
 
             public void* ScratchBuffer;
             public nuint ScratchBufferSize;

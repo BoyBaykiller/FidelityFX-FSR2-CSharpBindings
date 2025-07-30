@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-
 using static FFX_FSR2.FSR2Error;
 using static FFX_FSR2.FSR2Interface;
 using static FFX_FSR2.FSR2Types;
@@ -58,19 +57,19 @@ namespace FFX_FSR2
             public FloatCoords2D JitterOffset;
             public FloatCoords2D MotionVectorScale;
             public Dimensions2D RenderSize;
-            public byte EnableSharpening;
+            public bool EnableSharpening;
             public float Sharpness;
             public float FrameTimeDelta;
             public float PreExposure;
-            public byte Reset;
+            public bool Reset;
             public float CameraNear;
             public float CameraFar;
             public float CameraFovAngleVertical;
             public float ViewSpaceToMetersFactor;
-            public byte DeviceDepthNegativeOneToOne;
+            public bool DeviceDepthNegativeOneToOne;
 
             // EXPERIMENTAL eactive mask generation parameters
-            public byte EnableAutoReactive;
+            public bool EnableAutoReactive;
             public Resource ColorOpaqueOnly;
             public float AutoTcThreshold;
             public float AutoTcScale;
@@ -93,7 +92,7 @@ namespace FFX_FSR2
 
         public struct Context
         {
-            public fixed byte Data[FFX_FSR2_CONTEXT_SIZE];
+            public fixed uint Data[FFX_FSR2_CONTEXT_SIZE];
         }
 
         [LibraryImport(LIBRARY_NAME, EntryPoint = "ffxFsr2ContextCreate")]
